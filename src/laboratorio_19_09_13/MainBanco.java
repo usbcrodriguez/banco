@@ -17,13 +17,18 @@ public class MainBanco {
         // TODO code application logic here
         
         Banco banco = new Banco();
-        banco.adicionarCliente(new Cliente(null,null,null, null));
-        banco.adicionarCliente(new Cliente(null,null,null, null));
-        banco.adicionarCliente(new Cliente(null,null,null, null));
-        
-        Cliente x = banco.buscarPorDocumento("131211");
+        banco.adicionarCliente(new Cliente("Juan","Pérez","1234", new Fecha(1,1,99)));
+        banco.adicionarCliente(new Cliente("María","Rodríguez","4122", new Fecha(1,1,99)));
+        banco.adicionarCliente(new Cliente("Pedro","Gómez","444", new Fecha(1,1,99)));
+       
+        banco.imprimirClientes();
+        System.out.println("Al buscar 1234");
+       Cliente x = banco.buscarPorDocumento("1234");
         System.out.println(x);
-        banco.borrarCliente("131211");
+        System.out.println("Al borrar 1234");
+        banco.borrarCliente("1234");
+        banco.imprimirClientes();
+               
         
         
     }
